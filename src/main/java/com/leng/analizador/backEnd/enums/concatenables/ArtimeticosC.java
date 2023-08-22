@@ -14,7 +14,7 @@ public enum ArtimeticosC {
     DECREMENTO("--");
 
     private String simbolo;
-    private int[] estadosPermitidos = new int[] { 0, 1, 3, 6, 7, 8, 9, 11, 13, 14 };
+    //private int[] estadosPermitidos = new int[] { 0, 1, 3, 6, 7, 8, 9, 11, 13, 14 };
 
     private ArtimeticosC(String simbolo) {
         this.simbolo = simbolo;

@@ -6,12 +6,14 @@ import com.leng.analizador.backEnd.analizador.controlador.analizador.Analizable;
 import com.leng.analizador.backEnd.frontEnd2.utils.LogicaArchivos;
 import com.leng.analizador.frontEnd.Panel1;
 import com.leng.analizador.frontEnd.Panel1Escritura;
+import com.leng.analizador.frontEnd.Panel2;
 import com.leng.analizador.frontEnd.VentanPrincipal;
 import com.leng.analizador.frontEnd.compnents.ConstructorBotton;
 
 public class AccionBoton implements java.awt.event.ActionListener {
 
     private Panel1 panel1 = new Panel1();
+    private Panel2 panel2 = new Panel2();
 
     @Override
     public void actionPerformed(ActionEvent event) {
@@ -28,7 +30,7 @@ public class AccionBoton implements java.awt.event.ActionListener {
 
             } else if (botones.getText().equals("Grafico")) {
                 System.out.println("Grafico ");
-                VentanPrincipal.addPanel(panel1);
+                VentanPrincipal.addPanel(panel2);
 
             } else if (botones.getText().equals("Play")) {
                 /// boton para obtener texto en TextPane

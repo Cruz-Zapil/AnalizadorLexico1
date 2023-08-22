@@ -3,7 +3,6 @@ package com.leng.analizador.backEnd.enums.simples;
 import java.awt.Color;
 
 import com.leng.analizador.frontEnd.Panel1;
-import com.leng.analizador.frontEnd.Panel1Escritura;
 
 public enum SimboloSim {
 

@@ -12,6 +12,7 @@ import com.leng.analizador.frontEnd.compnents.ConstructorPanel;
 import java.awt.Font;
 import java.awt.Color;
 
+
 public class Panel1 extends ConstructorPanel {
 
     //// panel de lot text area 
