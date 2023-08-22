@@ -15,13 +15,13 @@ public class LogicaArchivos {
 
     private JFileChooser miBuscador;
     String RUTA;
-    String rutaB = "";
     private String rutaFichero = "src/main/java/com/practica2/ficheros/";
+    public static String lecturaGraficos="";
 
 
     public String fileChoser() {
 
-        String textoLeido="null";
+        String textoLeido="";
         miBuscador = new JFileChooser(".");
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de Python (.py)", "py");
 
@@ -32,10 +32,25 @@ public class LogicaArchivos {
             textoLeido="";
             textoLeido = leerArchivoExterior(miBuscador.getSelectedFile().getAbsolutePath());
             System.out.println(miBuscador.getSelectedFile().getAbsolutePath());
-            // areaText.setText(textoLeido);
+           
         }
         return textoLeido;
     }
+
+    public String obtenerRutaCarpeta() {
+        JFileChooser miBuscador = new JFileChooser(".");
+        miBuscador.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); // Solo seleccionar directorios
+    
+        int valor = miBuscador.showOpenDialog(miBuscador);
+        if (valor == JFileChooser.APPROVE_OPTION) {
+            String rutaCarpeta = miBuscador.getSelectedFile().getAbsolutePath();
+            System.out.println(rutaCarpeta);
+            return rutaCarpeta;
+        }
+        
+        return null; // Retorna null si la selección fue cancelada
+    }
+    
 
     public String leerArchivoExterior(String ruta) {
 

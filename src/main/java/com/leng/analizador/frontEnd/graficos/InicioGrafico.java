@@ -1,5 +1,6 @@
 package com.leng.analizador.frontEnd.graficos;
 
+import com.leng.analizador.backEnd.frontEnd2.utils.LogicaArchivos;
 
 public class InicioGrafico {
     private Nodos nodoInicial = new Nodos(); 
@@ -19,7 +20,8 @@ public class InicioGrafico {
         }
 
         nodoActual.setDobleElipse(true);
-
-        nodoInicial.graficar("pruebis12.jpg");
+        System.out.println(" **** ya grafico ");
+        
+        nodoInicial.graficar( LogicaArchivos.lecturaGraficos+"/"+cadena+".jpg");
     }
 }

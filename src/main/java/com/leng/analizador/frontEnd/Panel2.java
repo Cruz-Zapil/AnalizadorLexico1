@@ -13,8 +13,6 @@ import com.leng.analizador.frontEnd.compnents.Item;
 public class Panel2 extends ConstructorPanel {
 
     //// paneles de imagenes
-    private JPanel panelImagenes;
-    private JComboBox<String> lista;
     private Panel2Auxi panel2Auxi;
 
     public Panel2() {
@@ -23,16 +21,17 @@ public class Panel2 extends ConstructorPanel {
         panel2Auxi = new Panel2Auxi();
         this.add(panel2Auxi);
 
-        
-
     }
 
     
+
+
 }
 
-    class ItemListRenderer extends DefaultListCellRenderer {
+class ItemListRenderer extends DefaultListCellRenderer {
     @Override
-    public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected,
+            boolean cellHasFocus) {
         if (value instanceof Item) {
             Item item = (Item) value;
             value = item.getLabel();
@@ -40,5 +39,4 @@ public class Panel2 extends ConstructorPanel {
         return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
     }
 
-    
 }

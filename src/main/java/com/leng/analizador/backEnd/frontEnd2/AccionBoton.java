@@ -30,7 +30,17 @@ public class AccionBoton implements java.awt.event.ActionListener {
 
             } else if (botones.getText().equals("Grafico")) {
                 System.out.println("Grafico ");
-                VentanPrincipal.addPanel(panel2);
+
+                LogicaArchivos logicaArchivos = new LogicaArchivos();
+                String rutaCarpeta = logicaArchivos.obtenerRutaCarpeta();
+                if (rutaCarpeta != null) {                    
+                    VentanPrincipal.addPanel(panel2);
+                    LogicaArchivos.lecturaGraficos = rutaCarpeta;
+                }else {
+                    JOptionPane.showMessageDialog(null, "Seleccione una carpeta para guardar los graficos");
+                }
+                
+
 
             } else if (botones.getText().equals("Play")) {
                 /// boton para obtener texto en TextPane
