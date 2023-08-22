@@ -20,7 +20,6 @@ public class InicioGrafico {
         }
 
         nodoActual.setDobleElipse(true);
-        System.out.println(" **** ya grafico ");
         
         nodoInicial.graficar( LogicaArchivos.lecturaGraficos+"/"+cadena+".jpg");
     }

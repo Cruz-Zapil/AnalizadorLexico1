@@ -3,6 +3,8 @@ package com.leng.analizador.frontEnd.graficos;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+import com.leng.analizador.backEnd.frontEnd2.utils.LogicaArchivos;
+
 class Nodos {
 
     private Nodos acumulativo;
@@ -64,7 +66,7 @@ class Nodos {
         FileWriter fichero = null;
         PrintWriter escritor;
         try {
-            fichero = new FileWriter("text_grafico.dot");
+            fichero = new FileWriter(LogicaArchivos.lecturaGraficos+ "/text_grafico.dot");
             escritor = new PrintWriter(fichero);
             escritor.print(getCodigoGraphviz());
             escritor.close(); // Cierra el escritor para que el archivo se guarde correctamente
@@ -80,9 +82,9 @@ class Nodos {
         }
         try {
             Runtime rt = Runtime.getRuntime();
-            rt.exec("dot -Tjpg -o " + path + " text_grafico.dot");
+            rt.exec("dot -Tjpg -o " + path + " "+LogicaArchivos.lecturaGraficos+"/text_grafico.dot");
 
-            System.out.println("dot -Tjpg -o " + path + " text_grafico.dot");
+          //  System.out.println("dot -Tjpg -o " + path + " "+LogicaArchivos.lecturaGraficos+"/text_grafico.dot");
 
             Thread.sleep(500);
         } catch (Exception ex) {
