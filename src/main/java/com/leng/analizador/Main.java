@@ -13,6 +13,5 @@ public class Main
       //  new InicioGrafico().insertar("!hola");
            System.out.println( "Hello World!" );
           new VentanPrincipal();
-       
     }
 }

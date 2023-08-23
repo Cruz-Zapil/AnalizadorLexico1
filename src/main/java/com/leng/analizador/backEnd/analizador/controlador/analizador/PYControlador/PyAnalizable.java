@@ -9,8 +9,8 @@ public class PyAnalizable {
     public ControlFuncionTransicion controlFuncionTransicion = new ControlFuncionTransicion();
 
     // desminuzar cada cadena, saber la linea y la comuna de cada caracter
-    private int linea;
-    private int columna;
+    public static int linea;
+    public static int columna;
     private String contenido;
     private int indice; // Índice del caracter actual
     private String contenidoVacio;
@@ -18,7 +18,7 @@ public class PyAnalizable {
     public PyAnalizable(String envio) {
         contenido = envio;
         linea = 1;
-        columna = 1;
+        columna = 0;
         indice = 0;
     }
 
@@ -26,45 +26,42 @@ public class PyAnalizable {
 
         System.out.println("envio: " + contenido);
 
-
         for (indice = 0; indice < contenido.length(); indice++) {
             char caracterActual = contenido.charAt(indice);
-            
+
             // Verificar si el carácter es una nueva línea
             if (caracterActual == '\n') {
                 columna = 0; // Reiniciar la columna al comienzo de una nueva línea
                 linea++;
             }
-            
+
             // Verificar si el carácter es "#", en cuyo caso se ignora la línea
             if (caracterActual == '#') {
 
                 while (indice < contenido.length() && contenido.charAt(indice) != '\n') {
-                  
-                    String comentario = contenido.charAt(indice)+"";
+
+                    String comentario = contenido.charAt(indice) + "";
                     //// enviando comentarios a la interfaz
-                    Panel1Escritura.setTextColor(comentario, new Color(128,128,128));
-                  
+                    Panel1Escritura.setTextColor(comentario, new Color(128, 128, 128));
+
                     indice++; // Avanzar hasta el final de la línea
                 }
                 linea++;
                 columna = 0; // Reiniciar la columna al comienzo de la siguiente línea
                 continue; // Saltar al siguiente caracter
             }
-            
+
             // Incrementar la columna para otros caracteres que no sean '\n'
             columna++;
-            
+
             // Enviar a la función de análisis de función de transición si no es "#"
             controlFuncionTransicion.analizar(caracterActual);
-            
+
             // Verificar si se ha llegado al final del contenido
-            if (indice == contenido.length() - 1) {
-                controlFuncionTransicion.setEstadoFinal();
-            }
+
         }
     }
-    
+
     public int getLinea() {
         return linea;
     }

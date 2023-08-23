@@ -2,6 +2,7 @@ package com.leng.analizador.backEnd.enums.simples;
 
 import java.awt.Color;
 
+import com.leng.analizador.backEnd.analizador.controlador.analizador.PYControlador.PyAnalizable;
 import com.leng.analizador.frontEnd.Panel1;
 
 public enum SimboloSim {
@@ -33,15 +34,17 @@ public enum SimboloSim {
     public static SimboloSim obtenerSimboloEnum(char caracter) {
         for (SimboloSim simboloEnum : SimboloSim.values()) {
             if (simboloEnum.caracter == caracter) {
-                generarToken(caracter);
+                generarToken(caracter+"");
                 return simboloEnum;
             }
         }
         return null;
     }
 
-    public static void generarToken(char caracter){
-        Panel1.setTextReport("[ TK, "+ caracter+" Simbolo]" , new Color(0, 191, 255));
+   private static void generarToken(String cadena) {
+        String cadenaCompa = "[ TK,\" " + cadena + " \" , Simbolo , " + "Patron, (" + PyAnalizable.linea + " , "
+                + PyAnalizable.columna + ") ]";
+        Panel1.setTextReport(cadenaCompa, new Color(35, 155, 86));
     }
 
     public int[] obtenerEstadosPermitidos() {
