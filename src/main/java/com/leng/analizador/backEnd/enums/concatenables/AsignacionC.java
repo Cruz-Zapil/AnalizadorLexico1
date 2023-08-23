@@ -2,6 +2,7 @@ package com.leng.analizador.backEnd.enums.concatenables;
 
 import java.awt.Color;
 
+import com.leng.analizador.backEnd.analizador.controlador.analizador.PYControlador.PyAnalizable;
 import com.leng.analizador.frontEnd.Panel1;
 
 public enum AsignacionC {
@@ -33,10 +34,10 @@ public enum AsignacionC {
         return null;
     }
 
-    private static void generarToken(String cadena) {
-        String cadenaAsig = "[ TK, " + cadena + " ]";
-        Panel1.setTextReport(cadenaAsig, new Color(0, 191, 255));
-
+   private static void generarToken(String cadena) {
+        String cadenaCompa = "[ TK,\" " + cadena + " \" , Asignacion " + "Patron, (" + PyAnalizable.linea + " , "
+                + PyAnalizable.columna + ") ]";
+        Panel1.setTextReport(cadenaCompa, new Color(31, 97, 141));
     }
 
 }

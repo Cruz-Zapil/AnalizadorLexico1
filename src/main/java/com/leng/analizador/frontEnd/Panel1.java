@@ -12,6 +12,7 @@ import com.leng.analizador.frontEnd.compnents.ConstructorPanel;
 import java.awt.Font;
 import java.awt.Color;
 
+
 public class Panel1 extends ConstructorPanel {
 
     //// panel de lot text area 
@@ -30,7 +31,7 @@ public class Panel1 extends ConstructorPanel {
         areaTextError = new JTextPane();
         areaTextError.setBounds(50, 430, 500, 150);
         areaTextError.setBackground(Color.black);
-        areaTextError.setFont(new Font("Arial", Font.BOLD, 12));
+        areaTextError.setFont(new Font("Arial", Font.BOLD, 15));
         areaTextError.setForeground(Color.red);
         areaTextError.setEditable(false);
     

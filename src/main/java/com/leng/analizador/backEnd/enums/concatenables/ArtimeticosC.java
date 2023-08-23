@@ -2,6 +2,7 @@ package com.leng.analizador.backEnd.enums.concatenables;
 
 import java.awt.Color;
 
+import com.leng.analizador.backEnd.analizador.controlador.analizador.PYControlador.PyAnalizable;
 import com.leng.analizador.frontEnd.Panel1;
 
 public enum ArtimeticosC {
@@ -14,7 +15,7 @@ public enum ArtimeticosC {
     DECREMENTO("--");
 
     private String simbolo;
-    private int[] estadosPermitidos = new int[] { 0, 1, 3, 6, 7, 8, 9, 11, 13, 14 };
+    //private int[] estadosPermitidos = new int[] { 0, 1, 3, 6, 7, 8, 9, 11, 13, 14 };
 
     private ArtimeticosC(String simbolo) {
         this.simbolo = simbolo;
@@ -33,10 +34,10 @@ public enum ArtimeticosC {
 
     }
 
-    public static void generarToken(String cadena) {
-        String cadenaArtime = "[ Tk, " + cadena + " Aritmeticos]";
-        Panel1.setTextReport(cadenaArtime, new Color(0, 191, 255));
-
+    private static void generarToken(String cadena) {
+        String cadenaCompa = "[ TK,\" " + cadena + " \" , Aritmeticos " + "Patron, (" + PyAnalizable.linea + " , "
+                + PyAnalizable.columna + ") ]";
+        Panel1.setTextReport(cadenaCompa, new Color(31, 97, 141));
     }
 
 }

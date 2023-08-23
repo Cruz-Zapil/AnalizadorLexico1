@@ -15,23 +15,29 @@ public class Conector {
 
                 if (Keywords.probandoKW(cadenaPrincipal)) {
 
-                    String cadenaKW = "[ KW  " + cadenaPrincipal + " ]";
-                    Panel1.setTextReport(cadenaKW, new Color(128, 0, 128));
-                    return true;                    
-                  //  Panel1Escritura.setTextColor(cadenaPrincipal, new Color(128, 0, 128));
+                    String cadenaCompa = "[ TK,\" " + cadenaPrincipal + " \" , KEYWORD " + "Patron, ("
+                            + PyAnalizable.linea
+                            + " , "
+                            + PyAnalizable.columna + ") ]";
+                    Panel1.setTextReport(cadenaCompa, new Color(108, 52, 131));
+
+                    return true;
+                    // Panel1Escritura.setTextColor(cadenaPrincipal, new Color(128, 0, 128));
                 } else {
 
-                    String cadenaID = "[ ID " + cadenaPrincipal + " ]";
-                    Panel1.setTextReport(cadenaID, Color.WHITE);
+                    String cadenaCompa = "[ TK,\" " + cadenaPrincipal + " \" , IDENTIFICADOR " + "Patron, ("
+                            + PyAnalizable.linea + " , "
+                            + PyAnalizable.columna + ") ]";
+                    Panel1.setTextReport(cadenaCompa, new Color(253, 254, 254));
                     return true;
 
-                 //   Panel1Escritura.setTextColor(cadenaPrincipal, new Color(0, 0, 0));
+                    // Panel1Escritura.setTextColor(cadenaPrincipal, new Color(0, 0, 0));
 
                 }
             } else {
                 System.out.println(" otro");
                 return false;
-            
+
             }
 
         }
